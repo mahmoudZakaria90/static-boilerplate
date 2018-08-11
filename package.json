@@ -1,0 +1,13 @@
+{
+  "name": "static-boilerplate",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:mahmoudZakaria90/static-boilerplate.git",
+  "author": "Mahmoud Zakria <me@zakcoding.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-pug": "^4.0.1",
+    "html-formatter": "^0.1.9"
+  }
+}
