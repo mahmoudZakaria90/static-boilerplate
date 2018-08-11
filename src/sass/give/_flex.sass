@@ -1,0 +1,62 @@
+.gv
+	&-flex
+		display: flex
+		&-grow
+			&>*
+				flex-grow: 1
+				flex-shrink: 0
+		&-auto
+			&>*
+				flex-basis: auto
+			
+		&-row
+			flex-direction: row
+			&-reverse
+				flex-direction: row-reverse
+		&-column
+			flex-direction: column
+			&-reverse
+				flex-direction: column-reverse
+		&-wrap
+			flex-wrap: wrap
+			&-reverse
+				flex-wrap: wrap-reverse
+
+		&-center
+			align-items: center
+			justify-content: center
+			&-h
+				justify-content: center
+			&-v
+				align-items: center
+		&-start
+			align-items: flex-start
+			justify-content: flex-start
+			&-h
+				justify-content: flex-start
+			&-v
+				align-items: flex-start
+		&-end
+			align-items: flex-end
+			justify-content: flex-end
+			&-h
+				justify-content: flex-end
+			&-v
+				align-items: flex-end
+
+		&-stretch
+			align-items: stretch
+			&-content
+				align-content: stretch
+		&-sp
+			&-between
+				&-h
+					justify-content: space-between
+				&-v
+					align-content: space-between
+
+			&-around
+				&-h
+					justify-content: space-around
+				&-v
+					align-content: space-around

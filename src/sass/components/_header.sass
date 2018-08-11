@@ -1,0 +1,100 @@
+.header
+	&-logo
+		display: inline-block
+		margin-#{$dir-opp}: 1rem
+		padding: 1rem
+	&-collapse
+		height: 0
+		+gvTransitionD()
+		overflow: hidden
+		
+		@media(min-width: 768px)
+			&
+				height: auto!important
+				overflow: visible
+				float: $dir
+	&-head
+		@media(min-width: 768px)
+			&
+				float: $dir
+	&-burger
+		padding: 1.5rem
+		background-color: $main-color
+		width: 5.2rem
+		border-color: blue
+		border-radius: 4px
+		float: $dir-opp
+		cursor: pointer
+		@media(min-width: 768px)
+			&
+				display: none
+		span
+			display: block
+			margin-bottom: .5rem
+			border: 1px solid
+			border-color: $third-color
+			&:last-child
+				margin-bottom: 0
+		&:hover
+			background-color: $second-color
+			border-color: white
+	&-nav
+		&-wrap
+			& li
+				list-style-type: none
+			&>li
+				@media(min-width: 768px)
+					&
+						float: $dir
+				& a
+					text-decoration: none
+					color: $third-color
+					display: block
+					padding: 1rem
+			.fa
+				font-size: 1.4rem
+				margin: 0
+				margin-#{$dir}: .5rem	
+		
+	&-dropdown
+		position: relative
+		&.active
+			&>.header-dropdown-menu
+				display: block
+		&-hover
+			&:hover
+				.header-dropdown-menu
+					display: block
+		&-menu
+			display: none
+			padding-#{$dir}: 1.5rem
+			@media (min-width: 768px)
+				&
+					background-color: $main-color
+					min-width: 160px
+					border-radius: 4px
+					box-shadow: 0 1px 5px darken($main-color,.5)
+					position: absolute
+					top: 100%
+					#{$dir}: 0
+					padding: 0.5rem 0
+					z-index: 10
+					& > li
+						& > a
+							background-color: $main-color
+							color: $second-color
+							&:hover
+								background-color: $main-color
+								color: $second-color
+
+
+	
+	&-breadcrumb
+		&>li
+			display: inline-block
+			& + li
+				&:before
+					content: '/'
+					margin-#{$dir-opp}: 1rem
+			&>a
+				display: block

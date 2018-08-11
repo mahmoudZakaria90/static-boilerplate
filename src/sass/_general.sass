@@ -1,0 +1,46 @@
+/*General*/
+/*============*/
+//Simple reset
+
+*
+	margin: 0
+	// padding: 0
+	outline: 0
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before,&:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+	
+//base font size
+\:root
+	font-size: 10px
+
+html,
+body
+	height: 100%
+
+
+body
+	font-family: $main-face
+	font-size: $main-font
+	line-height: 1.5
+	color: $main-color
+	font-weight: 400
+	direction: $dir2
+
+/*Give All anchors/button a transition*/
+a,
+button,
+input
+	+gvTransition(background-color 450ms,color 450ms)
+
+a
+	color: inherit
+
+img  
+	max-width: 100%
+	vertical-align: middle
+	border: none

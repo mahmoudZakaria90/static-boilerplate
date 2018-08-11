@@ -1,0 +1,17 @@
+//Direction
+$direction:'right'
+$dir: null
+$dir-opp: null
+$dir2: null
+$dir-opp2: null
+
+@if $direction == 'left'
+	$dir: left
+	$dir2: ltr
+	$dir-opp: right
+	$dir-opp2: rtl
+@else
+	$dir: right
+	$dir2: rtl
+	$dir-opp: left
+	$dir-opp2: ltr
