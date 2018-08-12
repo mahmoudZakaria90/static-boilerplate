@@ -2028,7 +2028,7 @@ gulp-ruby-sass@^3.0.0:
     rimraf "^2.2.8"
     vinyl "^2.1.0"
 
-gulp-util@^3.0.0, gulp-util@^3.0.8:
+gulp-util@^3.0.0:
   version "3.0.8"
   resolved "https://registry.yarnpkg.com/gulp-util/-/gulp-util-3.0.8.tgz#0054e1e744502e27c04c187c3ecc505dd54bbb4f"
   dependencies:
@@ -2176,10 +2176,6 @@ homedir-polyfill@^1.0.1:
 hosted-git-info@^2.1.4:
   version "2.7.1"
   resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.7.1.tgz#97f236977bd6e125408930ff6de3eec6281ec047"
-
-html-formatter@^0.1.9:
-  version "0.1.9"
-  resolved "https://registry.yarnpkg.com/html-formatter/-/html-formatter-0.1.9.tgz#58e8859712f3d4d9e7094027517c4c46f4c336b8"
 
 htmlescape@^1.1.0:
   version "1.1.1"

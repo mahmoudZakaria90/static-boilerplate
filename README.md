@@ -1,2 +1,18 @@
-# Static-boilerplate
- Static HTML generator
+# Static-starterKit
+ Static generator Pug to HTML 
+
+
+### clone
+`git clone git@github.com:mahmoudZakaria90/static-starterKit.git`
+
+### install
+`yarn` or `npm i`
+
+### dev
+`yarn dev` or `gulp dev`
+
+### build
+`yarn build` or `gulp build`
+
+
+Enjoy :heart:
