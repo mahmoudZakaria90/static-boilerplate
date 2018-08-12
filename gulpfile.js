@@ -7,11 +7,15 @@ const babel = require('babelify');
 const browserSync = require('browser-sync').create();
 const hotReload = browserSync.reload;
 const colors = require('ansi-colors');
+const argv = require('minimist')(process.argv.slice(2));
+const isProduction = argv.production;
 const fs = require('fs');
 
-
 //Production
-const cssMinify = require('gulp-csso');
+const uglify = require('gulp-uglify');
+const pump = require('pump');
+
+
 
 //paths
 const pugPath = ['./src/pug/*.pug', './src/pug/**/*.pug'];
@@ -29,20 +33,23 @@ gulp.task('pug', function() {
 //Sass
 gulp.task('styles', function() {
     sass(sassPath[0], {
-            style: 'expanded'
+            style: isProduction ? 'compressed' : 'expanded'
         })
         .on('error', sass.logError)
         .pipe(autoprefixer())
         .pipe(gulp.dest('./dist/css/'));
+    if (isProduction) console.log(colors.blueBright('CSS Minified!'))
 });
 
 //watch 
 gulp.task('watch', function() {
     gulp.watch(pugPath, ['pug']);
     gulp.watch(sassPath, ['styles', function() {
-        console.log(colors.blueBright('CSS Updated!'))}]);
+        console.log(colors.blueBright('CSS Updated!'))
+    }]);
     gulp.watch(jsPath, ['scripts', function() {
-     console.log(colors.yellow('JS Updated!'))}]);
+        console.log(colors.yellow('JS Updated!'))
+    }]);
     gulp.watch(distPath[0], function() {
         console.log(colors.green('HTML Updated!'))
     });
@@ -52,19 +59,26 @@ gulp.task('watch', function() {
 //bundle
 gulp.task('scripts', function() {
     browserify("./src/js/main.js")
-        .transform("babelify", {
+        .transform(babel, {
             presets: ["es2015"]
         })
         .bundle()
-        .pipe(fs.createWriteStream("./dist/js/main.js"));
+        .pipe(fs.createWriteStream("./dist/js/main.js"))
 })
 
-//CSS minify
-gulp.task('stylesMinify', function() {
-    gulp.src('./dist/css/*.css')
-        .pipe(cssMinify())
-        .pipe(gulp.dest('./dist/css/'));
-});
+
+gulp.task('minifyJS', function(cb) {
+    setTimeout(function() {
+        pump([
+                gulp.src('dist/js/*.js'),
+                uglify(),
+                gulp.dest('dist/js')
+            ],
+            cb
+        );
+        console.log(colors.yellow('JS Minified!'));
+    }, 500)
+})
 
 //Localhost 
 gulp.task('serve', function() {
@@ -77,5 +91,4 @@ gulp.task('serve', function() {
 
 //Fire!
 gulp.task('dev', ['watch', 'serve']); //Dev
-gulp.task('build', ['styles', 'stylesMinify', 'scripts']); //Build
-gulp.task('default', ['styles', 'scripts', 'watch', 'serve']); //All
+gulp.task('default', ['styles', 'scripts', isProduction ? 'minifyJS' : 'scripts']); //build
