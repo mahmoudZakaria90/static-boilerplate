@@ -1,2 +1,2 @@
 # Static-boilerplate
-## Static HTML generator
+ Static HTML generator
