@@ -17,5 +17,7 @@ https://pugjs.org/
 ### build
 `yarn build` or `gulp build`
 
+### compile All .pugs to .html
+`yarn pug`
 
 Enjoy :heart:
