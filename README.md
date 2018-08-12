@@ -1,6 +1,9 @@
 # Static-starterKit
  Static generator Pug to HTML 
 
+ ### Pug doc
+https://pugjs.org/
+
 
 ### clone
 `git clone git@github.com:mahmoudZakaria90/static-starterKit.git`
