@@ -43,16 +43,15 @@ gulp.task('styles', function() {
 
 //watch 
 gulp.task('watch', function() {
-    gulp.watch(pugPath, ['pug']);
+    gulp.watch(pugPath, ['pug', function() {
+        console.log(colors.green('HTML Updated!'))
+    }]);
     gulp.watch(sassPath, ['styles', function() {
         console.log(colors.blueBright('CSS Updated!'))
     }]);
     gulp.watch(jsPath, ['scripts', function() {
         console.log(colors.yellow('JS Updated!'))
     }]);
-    gulp.watch(distPath[0], function() {
-        console.log(colors.green('HTML Updated!'))
-    });
     gulp.watch(distPath, hotReload);
 })
 
@@ -90,5 +89,6 @@ gulp.task('serve', function() {
 })
 
 //Fire!
-gulp.task('dev', ['watch', 'serve']); //Dev
-gulp.task('default', ['styles', 'scripts', isProduction ? 'minifyJS' : 'scripts']); //build
+gulp.task('dist', ['pug', 'styles', 'scripts']); //dist
+gulp.task('dev', ['dist', 'watch', 'serve']); //Dev
+gulp.task('default', ['dist', isProduction ? 'minifyJS' : 'scripts']); //build

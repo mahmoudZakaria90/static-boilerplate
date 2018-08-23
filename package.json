@@ -7,6 +7,8 @@
   "license": "MIT",
   "scripts": {
     "pug": "pug src/pug/*.pug -o dist/",
+    "watch": "gulp watch",
+    "dist": "gulp dist",
     "dev": "gulp dev",
     "build": "gulp --production"
   },
