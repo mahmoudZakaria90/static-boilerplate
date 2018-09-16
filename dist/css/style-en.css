@@ -1,8 +1,8 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css);
 /*@font-face */
 /*General */
 /*============ */
 * {
-  margin: 0;
   outline: 0;
   box-sizing: border-box;
 }
@@ -1048,7 +1048,7 @@ h1 {
   font-family: "Open Sans", sans-serif;
   font-weight: inherit;
   line-height: inherit;
-  color: green;
+  color: black;
   margin-bottom: 2.5rem;
   margin-top: 0;
 }
@@ -1057,7 +1057,7 @@ h2 {
   font-family: "Open Sans", sans-serif;
   font-weight: inherit;
   line-height: inherit;
-  color: green;
+  color: black;
   margin-bottom: 2.5rem;
   margin-top: 0;
 }
@@ -1066,7 +1066,7 @@ h3 {
   font-family: "Open Sans", sans-serif;
   font-weight: inherit;
   line-height: inherit;
-  color: green;
+  color: black;
   margin-bottom: 2.5rem;
   margin-top: 0;
 }
@@ -1075,7 +1075,7 @@ h4 {
   font-family: "Open Sans", sans-serif;
   font-weight: inherit;
   line-height: inherit;
-  color: green;
+  color: black;
   margin-bottom: 2.5rem;
   margin-top: 0;
 }
@@ -1084,7 +1084,7 @@ h5 {
   font-family: "Open Sans", sans-serif;
   font-weight: inherit;
   line-height: inherit;
-  color: green;
+  color: black;
   margin-bottom: 2.5rem;
   margin-top: 0;
 }
@@ -1093,7 +1093,7 @@ h6 {
   font-family: "Open Sans", sans-serif;
   font-weight: inherit;
   line-height: inherit;
-  color: green;
+  color: black;
   margin-bottom: 2.5rem;
   margin-top: 0;
 }
